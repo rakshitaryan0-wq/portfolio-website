@@ -10,6 +10,10 @@ body{
     color:white;
 }
 
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar{
     display:flex;
     justify-content:space-between;
@@ -19,6 +23,7 @@ body{
     backdrop-filter:blur(15px);
     position:sticky;
     top:0;
+    z-index:1000;
 }
 
 .logo{
@@ -42,18 +47,32 @@ body{
     color:#38bdf8;
 }
 
+/* =========================
+   HERO SECTION (HOME)
+========================= */
+
 .hero{
     height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
     padding:20px;
+
     background:
-            linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+            linear-gradient(
+                    rgba(0,0,0,.45),
+                    rgba(0,0,0,.45)
+            ),
             url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+
     background-size:cover;
     background-position:center;
+}
+
+.hero-content{
+    max-width:900px;
 }
 
 .hero h1{
@@ -66,8 +85,12 @@ body{
 
 .hero p{
     margin:20px 0;
-    font-size:1.2rem;
+    font-size:1.3rem;
 }
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn{
     display:inline-block;
@@ -82,6 +105,39 @@ body{
 .btn:hover{
     transform:translateY(-3px);
 }
+
+/* =========================
+   PAGE HERO
+========================= */
+
+.page-hero{
+    height:40vh;
+
+    background:
+            linear-gradient(
+                    rgba(0,0,0,.55),
+                    rgba(0,0,0,.55)
+            ),
+            url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.page-hero-content h1{
+    font-size:3rem;
+    color:white;
+}
+
+/* =========================
+   HIGHLIGHTS
+========================= */
 
 .highlights{
     display:grid;
@@ -98,16 +154,45 @@ body{
     backdrop-filter:blur(15px);
 }
 
+.card h3{
+    margin-bottom:10px;
+    color:#38bdf8;
+}
+
+/* =========================
+   PAGE SECTIONS
+========================= */
+
 .page-section{
     padding:100px 8%;
 }
 
+.page-section h1{
+    margin-bottom:40px;
+    font-size:3rem;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
 .about-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:40px;
-    margin-top:40px;
+    gap:50px;
 }
+
+.about-container h2{
+    margin-bottom:15px;
+}
+
+.about-container ul{
+    padding-left:20px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
 
 .projects-grid{
     display:grid;
@@ -121,15 +206,86 @@ body{
     padding:30px;
     border-radius:20px;
     transition:.3s;
+    backdrop-filter:blur(10px);
 }
 
 .project-card:hover{
     transform:translateY(-10px);
 }
 
-.contact-form{
-    max-width:600px;
+.project-card h3{
+    margin-bottom:10px;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section{
+    padding:100px 8%;
+}
+
+.contact-container{
+    width:100%;
+    max-width:850px;
     margin:auto;
+}
+
+.contact-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:40px;
+}
+
+.contact-card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border-radius:24px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,0.25);
+}
+
+.contact-card h2{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.email{
+    font-size:1.1rem;
+    margin-bottom:25px;
+}
+
+.email i{
+    margin-right:10px;
+    color:#38bdf8;
+}
+
+.description{
+    line-height:1.8;
+    color:#d1d5db;
+    margin-bottom:35px;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-bottom:40px;
+}
+
+.social-links a{
+    color:white;
+    font-size:2.5rem;
+    transition:.3s;
+}
+
+.social-links a:hover{
+    color:#38bdf8;
+    transform:translateY(-5px);
+}
+
+.contact-form{
     display:flex;
     flex-direction:column;
     gap:20px;
@@ -137,10 +293,12 @@ body{
 
 .contact-form input,
 .contact-form textarea{
+    width:100%;
     padding:15px;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
     outline:none;
+    font-size:1rem;
 }
 
 .contact-form textarea{
@@ -148,11 +306,30 @@ body{
     resize:none;
 }
 
+.send-btn{
+    background:#38bdf8;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:30px;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.send-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
 .hamburger{
     display:none;
     flex-direction:column;
-    cursor:pointer;
     gap:5px;
+    cursor:pointer;
 }
 
 .hamburger span{
@@ -161,17 +338,49 @@ body{
     background:white;
 }
 
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
 @media(max-width:768px){
 
-    .nav-links{
-        display:none;
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .page-hero-content h1{
+        font-size:2rem;
+    }
+
+    .contact-card{
+        padding:30px 20px;
+    }
+
+    .contact-title{
+        font-size:2.2rem;
+    }
+
+    .social-links a{
+        font-size:2rem;
     }
 
     .hamburger{
         display:flex;
     }
 
-    .hero h1{
-        font-size:2.5rem;
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:80px;
+        right:20px;
+        background:#111827;
+        flex-direction:column;
+        padding:20px;
+        border-radius:12px;
+        box-shadow:0 10px 30px rgba(0,0,0,.3);
+    }
+
+    .nav-links.active{
+        display:flex;
     }
 }
